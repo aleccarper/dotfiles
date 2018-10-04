@@ -1,0 +1,145 @@
+set $mod Mod1
+
+# Install via AUR; nerd-fonts-source-code-pro
+font pango: SauceCodePro Nerd Font Black 11
+gaps inner 6
+# gaps outer 6
+
+# Colors: border, bg, text, indicator, child border
+client.placeholder #626262 #626262 #626262 #626262
+client.background #fdf6e3
+client.focused #073642 #073642 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+default_border none
+default_floating_border none
+
+floating_modifier $mod
+
+# Keybindings
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 3
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 3
+bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 #lux -a 10%
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 #lux -s 10%
+
+bindsym $mod+Return exec kitty
+bindsym $mod+Ctrl+l exec /home/alec/Bin/lock
+bindsym $mod+d exec rofi -show run
+bindsym $mod+w kill
+
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+shift+W move workspace to output up
+bindsym $mod+shift+S move workspace to output down
+
+# Change focus to window
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+
+# Resize floating windows
+bindsym $mod+Shift+Left resize shrink width 20px
+bindsym $mod+Shift+Down resize grow height 20px
+bindsym $mod+Shift+Up resize shrink height 20px
+bindsym $mod+Shift+Right resize grow width 20px
+
+# Splits
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout default
+
+# Enable/disable bar
+bindsym $mod+m bar mode toggle
+
+# Show/hide if bar disabled
+bindsym $mod+Shift+b bar hidden_state toggle
+
+# Scratchpad
+bindsym $mod+Shift+n move scratchpad
+bindsym $mod+n scratchpad show
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5: ♫"
+
+# Switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+
+# Move focused container to workspace
+bindsym $mod+Shift+exclam move container to workspace $workspace1
+bindsym $mod+Shift+at move container to workspace $workspace2
+bindsym $mod+Shift+numbersign move container to workspace $workspace3
+bindsym $mod+Shift+dollar move container to workspace $workspace4
+bindsym $mod+Shift+percent move container to workspace $workspace5
+bindsym $mod+Shift+asciicircum move container to workspace $workspace6
+bindsym $mod+Shift+ampersand move container to workspace $workspace7
+bindsym $mod+Shift+asterisk move container to workspace $workspace8
+
+# Screenshot fullscreen
+bindsym $mod+p exec "/home/alec/Bin/screenshot"
+# Screenshot with selection
+bindsym $mod+Shift+p exec "flameshot gui -p ~/Pictures/Screenshots"
+
+# Reload config
+bindsym $mod+r reload
+# Hot Restart
+bindsym $mod+Shift+R restart
+# Quit i3
+bindsym $mod+Shift+Q exit
+
+bar {
+  font pango: SauceCodePro Nerd Font Black 12
+	status_command i3blocks -c ~/.i3/blocks.conf
+  position top
+  colors {
+    separator #dc322f
+    background #002b36
+    statusline #268bd2
+    focused_workspace #002b36 #002b36 #fdf6e3
+    active_workspace #002b36 #002b36  #fdf6e3
+    inactive_workspace #002b36 #002b36  #586e75
+    urgent_workspace #d33682 #d33682 #fdf6e3
+  }
+}
+
+for_window [class="zoom"] floating enabled
+for_window [class="^Spotify$"] border none
+for_window [class="Enpass"] move to workspace $workspace4
+for_window [class="Gifview"] floating enabled
+for_window [class="feh"] floating enabled
+
+workspace_layout stacking
+assign [class="Firefox"] $workspace1
+assign [class="uxterm"] $workspace2
+assign [class="Enpass"] $workspace4
+
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id ~/Bin/monitors dual
