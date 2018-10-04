@@ -1,3 +1,0 @@
-SSH_AUTH_SOCK=/tmp/ssh-QSS5Quti19BS/agent.8937; export SSH_AUTH_SOCK;
-SSH_AGENT_PID=8938; export SSH_AGENT_PID;
-echo Agent pid 8938;
