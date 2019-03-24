@@ -35,3 +35,28 @@ alias rt='bundle exec rspec'
 alias nfrt='SKIP_FIXTURES=true rt'
 alias et='mix test'
 alias config='/usr/bin/git --git-dir=/home/alec/.cfg/ --work-tree=/home/alec'
+alias prcon='heroku console -a read-only-production'
+
+# Zsh Vim Mode
+bindkey -v
+export KEYTIMEOUT=1
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[red]%} [% NORMAL]%  %{$reset_color%}"
+    RPROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}[%*]"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+# End Zsh Mode

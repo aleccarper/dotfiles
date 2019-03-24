@@ -1,4 +1,5 @@
-set $mod Mod1
+#set $mod Mod1
+set $mod Mod4
 
 # Install via AUR; nerd-fonts-source-code-pro
 font pango: SauceCodePro Nerd Font Black 11
@@ -132,14 +133,11 @@ bar {
 
 for_window [class="zoom"] floating enabled
 for_window [class="^Spotify$"] border none
-for_window [class="Enpass"] move to workspace $workspace4
 for_window [class="Gifview"] floating enabled
 for_window [class="feh"] floating enabled
 
 workspace_layout stacking
-assign [class="Firefox"] $workspace1
-assign [class="uxterm"] $workspace2
-assign [class="Enpass"] $workspace4
 
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id ~/Bin/monitors dual
+exec --no-startup-id compton -f -b
