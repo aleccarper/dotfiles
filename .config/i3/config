@@ -7,12 +7,12 @@ gaps inner 6
 # gaps outer 6
 
 # Colors: border, bg, text, indicator, child border
-client.placeholder #626262 #626262 #626262 #626262
+client.placeholder #1C1C1A #1C1C1A #626262 #626262
 client.background #fdf6e3
-client.focused #073642 #073642 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+client.focused #1C1C1A #1C1C1A #FAF8F9 #6c71c4
+client.focused_inactive #1C1C1A #073642 #eee8d5 #6c71c4
+client.unfocused #1C1C1A #1C1C1A #3F3B3A #586e75
+client.urgent #1C1C1A #1C1C1A #fdf6e3 #dc322f
 
 default_border none
 default_floating_border none
@@ -116,18 +116,19 @@ bindsym $mod+Shift+R restart
 # Quit i3
 bindsym $mod+Shift+Q exit
 
+# background 002b36
 bar {
   font pango: SauceCodePro Nerd Font Black 12
 	status_command i3blocks -c ~/.i3/blocks.conf
   position top
   colors {
     separator #dc322f
-    background #002b36
+    background #1C1C1A
     statusline #268bd2
-    focused_workspace #002b36 #002b36 #fdf6e3
-    active_workspace #002b36 #002b36  #fdf6e3
-    inactive_workspace #002b36 #002b36  #586e75
-    urgent_workspace #d33682 #d33682 #fdf6e3
+    focused_workspace #1C1C1A #1C1C1A #FAF8F9
+    active_workspace #1C1C1A #1C1C1A  #FAF8F9
+    inactive_workspace #1C1C1A #1C1C1A  #3F3B3A
+    urgent_workspace #1C1C1A #1C1C1A #F72419
   }
 }
 

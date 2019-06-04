@@ -37,6 +37,7 @@ call dein#add('KabbAmine/zeavim.vim')
 call dein#add('mileszs/ack.vim')
 call dein#add('cloudhead/neovim-fuzzy')
 call dein#add('MattesGroeger/vim-bookmarks')
+call dein#add('sonph/onehalf', {'rtp': 'vim'})
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently install them.
@@ -67,7 +68,7 @@ set hidden
 let g:Powerline_symbols = 'fancy'
 let g:airline_left_alt_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_theme='kolor'
+let g:airline_theme='onehalfdark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
@@ -143,8 +144,8 @@ set cursorline
 set lazyredraw
 set number relativenumber
 "set clipboard=unnamed
-"colorscheme solarized
-colorscheme palenight
+colorscheme onehalflight
+"colorscheme palenight
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 "Restore cursor to file position in previous editing session
