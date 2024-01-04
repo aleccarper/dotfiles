@@ -38,6 +38,7 @@ call dein#add('mileszs/ack.vim')
 call dein#add('cloudhead/neovim-fuzzy')
 call dein#add('MattesGroeger/vim-bookmarks')
 call dein#add('sonph/onehalf', {'rtp': 'vim'})
+call dein#add('wsdjeg/dein-ui.vim')
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently install them.

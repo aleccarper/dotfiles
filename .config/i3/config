@@ -1,7 +1,8 @@
 #set $mod Mod1
 set $mod Mod4
 
-# Install via AUR; nerd-fonts-source-code-pro
+# Install via AUR; ttf-fira-code
+# Install via AUR; ttf-sourcecodepro-nerd
 font pango: SauceCodePro Nerd Font Black 11
 gaps inner 6
 # gaps outer 6
@@ -141,4 +142,4 @@ workspace_layout stacking
 
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id ~/Bin/monitors dual
-exec --no-startup-id compton -f -b
+#exec --no-startup-id picom -f -b

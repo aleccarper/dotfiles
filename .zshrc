@@ -19,9 +19,11 @@ alias vi=nvim
 alias vim=nvim
 alias sidekiq="SIDEKIQ_CONCURRENCY=10 sidekiq -C config/sidekiq.yml"
 
-. $HOME/.asdf/asdf.sh
+. /opt/asdf-vm/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/asdf.sh
+
+#. $HOME/.asdf/completions/asdf.bash
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
   ssh-agent > ~/.ssh-agent-thing
