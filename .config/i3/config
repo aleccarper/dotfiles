@@ -137,9 +137,15 @@ for_window [class="zoom"] floating enabled
 for_window [class="^Spotify$"] border none
 for_window [class="Gifview"] floating enabled
 for_window [class="feh"] floating enabled
+for_window [window_role="alert"] floating enable
 
 workspace_layout stacking
 
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id ~/Bin/monitors dual
-#exec --no-startup-id picom -f -b
+
+
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1200
+exec --no-startup-id xmodmap /home/alec/.Xmodmap
+
+# exec --no-startup-id picom --daemon

@@ -13,6 +13,7 @@ call dein#add('Shougo/dein.vim')
 
 " Add or remove your Bundles here:
 call dein#add('sheerun/vim-polyglot')
+call dein#add('rust-lang/rust.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('tpope/vim-fugitive')
@@ -31,7 +32,7 @@ call dein#add('chrisbra/Colorizer')
 call dein#add('ryanoasis/vim-devicons')
 call dein#add('neomake/neomake')
 call dein#add('ludovicchabant/vim-gutentags')
-"call dein#add('zhaocai/GoldenView.Vim')
+" call dein#add('zhaocai/GoldenView.Vim')
 call dein#add('vimwiki/vimwiki.git')
 call dein#add('KabbAmine/zeavim.vim')
 call dein#add('mileszs/ack.vim')
@@ -39,6 +40,10 @@ call dein#add('cloudhead/neovim-fuzzy')
 call dein#add('MattesGroeger/vim-bookmarks')
 call dein#add('sonph/onehalf', {'rtp': 'vim'})
 call dein#add('wsdjeg/dein-ui.vim')
+call dein#add('morhetz/gruvbox')
+call dein#add('joshdick/onedark.vim')
+call dein#add('tanvirtin/monokai.nvim')
+call dein#add('loctvl842/monokai-pro.nvim')
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently install them.
@@ -136,7 +141,7 @@ set autoindent
 set smartindent
 set autoread
 set scrolloff=5
-set background=dark
+"set background=dark
 set hlsearch "highlight search
 set incsearch
 set ignorecase smartcase "ignore case when searching
@@ -145,8 +150,10 @@ set cursorline
 set lazyredraw
 set number relativenumber
 "set clipboard=unnamed
-colorscheme onehalflight
+"colorscheme onehalflight
 "colorscheme palenight
+"colorscheme onedark
+colorscheme monokai
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 "Restore cursor to file position in previous editing session
@@ -176,6 +183,7 @@ function! RSpec(cmd)
 endfunction
 
 noremap <c-p> :FuzzyOpen<CR>
+noremap <C-p> :FuzzyOpen<CR>
 noremap <leader>s :FuzzyGrep
 noremap <leader>f :NERDTreeToggle<CR>
 noremap <leader>x :bd!<CR>
@@ -201,6 +209,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove<cr>
+
 
 " Autoformat Elixir files on save
 "autocmd BufWritePost *.exs silent :!mix format %
