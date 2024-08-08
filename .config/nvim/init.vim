@@ -150,10 +150,10 @@ set cursorline
 set lazyredraw
 set number relativenumber
 "set clipboard=unnamed
-"colorscheme onehalflight
+colorscheme onehalflight
 "colorscheme palenight
 "colorscheme onedark
-colorscheme monokai
+"colorscheme monokai
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 "Restore cursor to file position in previous editing session
