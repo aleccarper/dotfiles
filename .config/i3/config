@@ -148,4 +148,4 @@ exec --no-startup-id ~/Bin/monitors dual
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1200
 exec --no-startup-id xmodmap /home/alec/.Xmodmap
 
-exec --no-startup-id picom --daemon -b
+exec --no-startup-id picom --backend glx --daemon -b --fade-in-step=1 --fade-out-step=1 --fade-delta=0
