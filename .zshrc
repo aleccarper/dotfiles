@@ -19,11 +19,13 @@ alias vi=nvim
 alias vim=nvim
 alias sidekiq="SIDEKIQ_CONCURRENCY=10 sidekiq -C config/sidekiq.yml"
 
-. /opt/asdf-vm/asdf.sh
+#. /opt/asdf-vm/asdf.sh
 
 #. $HOME/.asdf/asdf.sh
 
 #. $HOME/.asdf/completions/asdf.bash
+#
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
   ssh-agent > ~/.ssh-agent-thing
@@ -38,6 +40,15 @@ alias nfrt='SKIP_FIXTURES=true rt'
 alias et='mix test'
 alias config='/usr/bin/git --git-dir=/home/alec/.cfg/ --work-tree=/home/alec'
 alias prcon='heroku console -a read-only-production'
+
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+  eval "$(<~/.ssh-agent-thing)"
+fi
+
+secrets=.secrets
+if [ -e "$secrets" ]; then
+  eval "$(<~/.secrets)"
+fi
 
 # Zsh Vim Mode
 bindkey -v
