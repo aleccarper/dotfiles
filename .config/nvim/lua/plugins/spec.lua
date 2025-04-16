@@ -14,7 +14,22 @@ return {
 	{ "vim-airline/vim-airline", lazy = false },
 	{ "vim-airline/vim-airline-themes", lazy = false },
 	{ "cloudhead/neovim-fuzzy", lazy = false },
-
+  {
+    "Shougo/deoplete.nvim",
+    build = ":UpdateRemotePlugins",
+    config = function()
+      vim.o.completeopt = "menuone,noinsert,noselect"
+      vim.g["deoplete#enable_at_startup"] = 1
+    end
+  },
+  {
+    "roxma/nvim-yarp",
+    build = ":UpdateRemotePlugins"
+  },
+  {
+    "roxma/vim-hug-neovim-rpc",
+    build = ":UpdateRemotePlugins"
+  },
   {
     "dstein64/vim-startuptime",
     -- lazy-load on a command
